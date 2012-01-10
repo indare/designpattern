@@ -1,5 +1,6 @@
 package strategy;
 
+
 /**
  * Created by IntelliJ IDEA.
  * User: m_arino
@@ -8,9 +9,9 @@ package strategy;
  * To change this template use File | Settings | File Templates.
  */
 public class StrategyMain {
-    
-    public static void main(String args[]){
+
+    public static void main(String args[]) {
         TaskController task = new TaskController();
-        task.process();
+        task.process(1);
     }
 }

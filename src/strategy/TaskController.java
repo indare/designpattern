@@ -11,18 +11,24 @@ public class TaskController {
 
     public void process(int Flag) {
         CalcTax myTax;
-        myTax = getTaxRulesForCountry();
+        myTax = getTaxRulesForCountry(Flag);
         SalesOrder mySO = new SalesOrder();
         mySO.process(myTax);
     }
 
-    private CalcTax getTaxRulesForCountry() {
+    private CalcTax getTaxRulesForCountry(int Flag) {
 
         /*
-        *ここで何を使うか指定するかはわかったけど
-        * ここが複雑怪奇になってしまうんでないかね？
+         * ここで何を使うか指定するかはわかったけど
+         * ここが複雑怪奇になってしまうんでないかね？
          */
-        return new CanTax();
+
+        if (Flag == 1) {
+            return new CanTax();
+        } else {
+            return new USTax();
+        }
+
     }
 
 }
