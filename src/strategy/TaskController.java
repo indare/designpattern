@@ -9,14 +9,19 @@ package strategy;
  */
 public class TaskController {
 
-    public void process() {
+    public void process(int Flag) {
         CalcTax myTax;
         myTax = getTaxRulesForCountry();
         SalesOrder mySO = new SalesOrder();
         mySO.process(myTax);
     }
-    
-    private CalcTax getTaxRulesForCountry(){
+
+    private CalcTax getTaxRulesForCountry() {
+
+        /*
+        *ここで何を使うか指定するかはわかったけど
+        * ここが複雑怪奇になってしまうんでないかね？
+         */
         return new CanTax();
     }
 
